@@ -1,16 +1,18 @@
 # gatsby-remark-code-headers
 
-Adds a header to code blocks.
+Adds a customizeable header, like a filename, to code blocks for Gatsby.js.
 
-## Install
+![Example](./example.png)
 
-You must be already using `gatsby-transformer-remark`. To install, run
+## Installation
+
+You must be already using [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/). To install, run
 
 ```bash
 $ npm install --save-dev gatsby-remark-code-headers
 ```
 
-Then, in `gatsby-config.js`, add
+Then, in `gatsby-config.js`, update your options for `gatsby-transformer-remark`:
 
 ```js
 plugins: [
