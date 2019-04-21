@@ -1,6 +1,9 @@
 import visit from 'unist-util-visit';
 
-const HEADER_TAG = '// Header: '.toLowerCase();
+const HEADER_TAGS = [
+  '// Header: ',
+  '# Header: ',
+].map(s => s.toLowerCase());
 const CLASS_NAME = 'gatsby-code-header';
 
 module.exports = function gatsbyRemarkCodeHeaders(
@@ -9,14 +12,15 @@ module.exports = function gatsbyRemarkCodeHeaders(
 ) {
   visit(markdownAST, 'code', (node, index) => {
     const lines = node.value.split('\n');
-    const headerLine = lines[0];
-    if (!headerLine.toLowerCase().startsWith(HEADER_TAG)) {
-      // Ignore code blocks without the header line.
+    const headerLine = lines[0].toLowerCase();
+    const headerTag = HEADER_TAGS.filter(t => headerLine.startsWith(t))[0];
+    if (!headerTag) {
+      // Ignore code blocks without a valid header line.
       return;
     }
 
     // Build the header node.
-    const header = headerLine.slice(HEADER_TAG.length);
+    const header = headerLine.slice(headerTag.length);
     const headerNode = {
       type: 'html',
       value: `
