@@ -32,7 +32,7 @@ plugins: [
 
 ## Usage
 
-In your Markdown file, add a comment to the first line of your code block:
+In your Markdown file, add a **header comment** to the first line of any code block:
 
 ~~~markdown
 ### Code
@@ -41,9 +41,14 @@ In your Markdown file, add a comment to the first line of your code block:
 // Header: filename.js
 console.log('This is filename.js');
 ```
+
+```python
+# Header: This is a Python file
+print('Hello World!')
+```
 ~~~
 
-**The header comment must be formatted exactly like the example above**. This plugin will replace the header comment with HTML for the header. It effectively transforms the above markdown into this:
+**The header comment must be formatted exactly like one of the examples above**. This plugin will replace the header comment with HTML for the header. It effectively transforms the above markdown into this:
 
 ~~~markdown
 ### Code
@@ -52,4 +57,29 @@ console.log('This is filename.js');
 ```js
 console.log('This is filename.js');
 ```
+
+<div class="gatsby-code-header"><h5>This is a Python file</h5></div>
+```python
+print('Hello World!')
+```
 ~~~
+
+### Styling
+
+Once your integration works, you'll probably want to style the code header. Here's some example CSS you can use as a starting point:
+
+```css
+.gatsby-code-header {
+  margin: 10px 0 0 0;
+}
+
+.gatsby-code-header h5 {
+  display: inline-block;
+  margin: 0;
+  padding: 2px 20px;
+  background-color: rgb(245, 242, 240);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid gray;
+}
+```
