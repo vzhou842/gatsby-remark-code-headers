@@ -1,0 +1,8 @@
+.DS_Store
+
+node_modules
+
+/*.js
+!/.babelrc.js
+
+*.log
