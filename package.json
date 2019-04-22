@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Victor Zhou <vzhou842@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vzhou842/gatsby-remark-code-headers.git"
+  },
   "keywords": [
     "gatsby",
     "gatsby-plugin",
