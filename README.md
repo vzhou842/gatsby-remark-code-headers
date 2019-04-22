@@ -1,5 +1,7 @@
 # gatsby-remark-code-headers
 
+[![Build Status](https://travis-ci.com/vzhou842/gatsby-remark-code-headers.svg?branch=master)](https://travis-ci.com/vzhou842/gatsby-remark-code-headers)
+
 Adds a customizeable header, like a filename, to code blocks for Gatsby.js.
 
 ![Example](./example.png)
