@@ -12,8 +12,8 @@ module.exports = function gatsbyRemarkCodeHeaders(
 ) {
   visit(markdownAST, 'code', (node, index) => {
     const lines = node.value.split('\n');
-    const headerLine = lines[0].toLowerCase();
-    const headerTag = HEADER_TAGS.filter(t => headerLine.startsWith(t))[0];
+    const headerLine = lines[0];
+    const headerTag = HEADER_TAGS.filter(t => headerLine.toLowerCase().startsWith(t))[0];
     if (!headerTag) {
       // Ignore code blocks without a valid header line.
       return;

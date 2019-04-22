@@ -32,7 +32,7 @@ test(`it leaves code blocks without the header comment`, () => {
 test(`it works for // header comments`, () => {
   const [original, updated] = setup(`
     \`\`\`js
-    // Header: test file
+    // Header: Test File!
     console.log('Hello World!');
     \`\`\`
   `);
@@ -42,14 +42,14 @@ test(`it works for // header comments`, () => {
   const [htmlNode, markdownNode] = updated.children;
 
   expect(htmlNode.type).toBe(`html`);
-  expect(htmlNode.value).toBe(`<div class="gatsby-code-header"><h5>test file</h5></div>`);
+  expect(htmlNode.value).toBe(`<div class="gatsby-code-header"><h5>Test File!</h5></div>`);
   expect(markdownNode.value).toBe(`console.log('Hello World!');`);
 });
 
 test(`it works for # header comments`, () => {
   const [original, updated] = setup(`
     \`\`\`python
-    # Header: test file
+    # Header: index.py
     print('Hello World!')
     \`\`\`
   `);
@@ -59,6 +59,6 @@ test(`it works for # header comments`, () => {
   const [htmlNode, markdownNode] = updated.children;
 
   expect(htmlNode.type).toBe(`html`);
-  expect(htmlNode.value).toBe(`<div class="gatsby-code-header"><h5>test file</h5></div>`);
+  expect(htmlNode.value).toBe(`<div class="gatsby-code-header"><h5>index.py</h5></div>`);
   expect(markdownNode.value).toBe(`print('Hello World!')`);
 });
