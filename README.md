@@ -6,6 +6,8 @@ Adds a customizeable header, like a filename, to code blocks for Gatsby.js.
 
 ![Example](./example.png)
 
+See this plugin being used live at [victorzhou.com](https://victorzhou.com/blog/build-an-io-game-part-1/) ([source code](https://github.com/vzhou842/victorzhou.com)).
+
 ## Installation
 
 You must be already using [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/). To install, run
